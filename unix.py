@@ -11,7 +11,7 @@ def modify_time(file_path, timestamp):
 
 def process_directory(directory):
     for filename in os.listdir(directory):
-        if filename.lower().endswith('.jpg', '.png', '.jpeg', '.mp4', '.mov', '.avi', '.mkv', '.webm'):
+        if filename.lower().endswith(('.jpg', '.png', '.jpeg', '.mp4', '.mov', '.avi', '.mkv', '.webm')):
             json_path = os.path.join(directory, f"{filename}.json")
             jpg_path = os.path.join(directory, filename)
             
