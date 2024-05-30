@@ -27,7 +27,7 @@ def process_directory(directory):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python run.py <directory_path1> <directory_path2> ...")
+        print("Usage: python unix.py <directory_path1> <directory_path2> ...")
     else:
         for directory in sys.argv[1:]:
             if os.path.isdir(directory):
