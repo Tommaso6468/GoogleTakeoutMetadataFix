@@ -6,7 +6,7 @@
 
 ## Overview
 
-This Python script helps you clean up your Google Photos export by updating the creation time of your JPG files based on the `photoTakenTime` metadata from the corresponding JSON files. Additionally, it removes the JSON files after processing.
+This simple Python script helps you clean up your Google Photos export by updating the creation time of your JPG files based on the `photoTakenTime` metadata from the corresponding JSON files. Additionally, it removes the JSON files after processing.
 
 ## Prerequisites
 
