@@ -21,8 +21,7 @@ This Python script helps you clean up your Google Photos export by updating the 
 git clone https://github.com/Tommaso6468/GooglePhotosTakeoutMetadataFix.git
 cd GooglePhotosTakeoutMetadataFix
 ```
-### Step 2: Install dependencies
-Windows only:
+### Step 2: Install dependencies (Windows only)
 ```sh
 pip install pywin32
 ```
@@ -40,7 +39,7 @@ python windows.py /path/to/your/photos1 /path/to/your/photos2
 ### Script execution
 1. Open a terminal or command prompt
 2. Navigate to the directory where you cloned the repository
-3. Run the script with the desired directories
+3. Run the script for your OS with the desired directories as arguments
 
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request.
