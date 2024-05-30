@@ -33,7 +33,7 @@ The script accepts multiple directories as arguments. Each directory should cont
 
 ### Example command
 ```sh
-python windows.py /path/to/your/photos1 /path/to/your/photos2
+python windows.py "/path/to/your/photos1" "/path/to/your/photos2"
 ```
 
 ### Script execution
