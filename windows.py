@@ -21,27 +21,38 @@ def get_timestamp(data):
         raise KeyError("No valid timestamp found in JSON data")
 
 def process_file(directory, filename):
-    json_path = os.path.join(directory, f"{filename}.json")
+    base_filename = os.path.splitext(filename)[-2]
+    json_paths = [
+        os.path.join(directory, f"{filename}.json"),
+        os.path.join(directory, f"{filename}-info.json"),
+        os.path.join(directory, f"{base_filename}.json"),
+        os.path.join(directory, f"{base_filename}-info.json")
+    ]
     jpg_path = os.path.join(directory, filename)
-    
-    if os.path.exists(json_path):
-        try:
-            with open(json_path, 'r') as json_file:
-                data = json.load(json_file)
-                timestamp = get_timestamp(data)
-                modify_time(jpg_path, timestamp)
-                print(f"Updated {jpg_path} with timestamp {timestamp}")
-            
-            os.remove(json_path)
-            print(f"Removed {json_path}")
-        except Exception as e:
-            print(f"Failed to process {json_path}: {e}")
+
+    for json_path in json_paths:
+        if os.path.exists(json_path):
+            try:
+                with open(json_path, 'r') as json_file:
+                    data = json.load(json_file)
+                    timestamp = get_timestamp(data)
+                    modify_time(jpg_path, timestamp)
+                    print(f"Updated {jpg_path} with timestamp {timestamp}")
+                
+                os.remove(json_path)
+                print(f"Removed {json_path}")
+                break
+            except Exception as e:
+                print(f"Failed to process {json_path}: {e}")
 
 def process_directory(directory, recursive=False):
     for root, _, files in os.walk(directory):
         for filename in files:
-            if not filename.lower().endswith('.json'):
-                process_file(root, filename)
+            try:
+                if not filename.lower().endswith('.json'):
+                    process_file(root, filename)
+            except Exception as e:
+                print(f"Failed to process {filename} in {root}: {e}")
         if not recursive:
             break
 
