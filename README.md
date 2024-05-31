@@ -6,7 +6,7 @@
 
 ## Overview
 
-This simple Python script helps you clean up your Google Photos/Drive export by updating the creation time of your files to the original creation time from the JSON files. Tt removes the JSON files after processing. Additionally, the script can search all directories within the given directory if you want.
+This simple Python script helps you clean up your Google Photos/Drive export by updating the creation time of your files to the original creation time from the JSON files. Tt removes the JSON files after processing. Additionally, the script can search all directories within the given directory if you want. Other information in the JSON files is now discarded, maybe in the future I'll implement all the other data.
 
 ### Issues with Google Drive cleaning
 If you pass a Google Drive takeout directory, it sometimes doesn't work for all of the files. This is because sometimes the filenames of the JSON files are quite different compared to the original file. You can try to add some specific patterns to the `process_file` function in the array `json_paths`.
