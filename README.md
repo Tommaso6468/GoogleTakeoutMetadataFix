@@ -21,8 +21,8 @@ If you pass a Google Drive takeout directory, it sometimes doesn't work for all 
 ### Step 1: Clone the repository
 
 ```sh
-git clone https://github.com/Tommaso6468/GooglePhotosTakeoutMetadataFix.git
-cd GooglePhotosTakeoutMetadataFix
+git clone https://github.com/Tommaso6468/GoogleTakeoutMetadataFix.git
+cd GoogleTakeoutMetadataFix
 ```
 ### Step 2: Install dependencies (Windows only)
 ```sh
@@ -32,17 +32,18 @@ pip install pywin32
 ## Usage
 
 ### Command line arguments
-The script accepts multiple directories as arguments. Each directory should contain the JPG files and their corresponding JSON metadata files.
+The script accepts multiple directories as arguments. Use directories given by Google Takeout, you can give a small directory or the entire takeout directory.
 
 ### Example command
 ```sh
-python windows.py "/path/to/your/photos1" "/path/to/your/photos2"
+python windows.py "/path/to/your/directory" "/path/to/your/directory"
 ```
 
 ### Script execution
 1. Open a terminal or command prompt
 2. Navigate to the directory where you cloned the repository
 3. Run the script for your OS with the desired directories as arguments
+4. Choose if you want to search all subdirectories. This way, if you pass the entire Takeout directory, it can search all the directories inside and the directories inside those
 
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request.
