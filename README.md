@@ -1,4 +1,4 @@
-# Google Photos Takeout Metadata Fix
+# Google Photos & Drive Takeout Metadata Fix
 
 ![Python](https://img.shields.io/badge/Python-3)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Unix-lightgrey)
@@ -6,7 +6,7 @@
 
 ## Overview
 
-This simple Python script helps you clean up your Google Photos export by updating the creation time of your JPG files based on the `photoTakenTime` metadata from the corresponding JSON files. Additionally, it removes the JSON files after processing.
+This simple Python script helps you clean up your Google Photos/Drive export by updating the creation time of your files to the original creation time from the JSON files. Tt removes the JSON files after processing. Additionally, the script can search all directories within the given directory if you want.
 
 ## Prerequisites
 
